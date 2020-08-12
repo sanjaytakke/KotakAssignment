@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/191775216e8ce53c38791eb07a1d2f31d0ae11b5/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Aug 11, 2020 05:39:11 PM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box' style="max-height:94px;">
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='25%'><span class='strong'>1</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='75%'>3</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="timeline-chart" class="row nm-v nm-h">
+		<div class="col s12 m12 l12 np-h">
+			<div class="card-panel">
+				<div class='left panel-name'>Timeline (seconds)</div>
+				<div class="chart-box" style="width:98%;max-height:145px;">
+					<canvas id="timeline" height="120"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Test1</span>
+						<span class='test-time'>Aug 11, 2020 05:39:12 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 11, 2020 05:39:12 PM</span>
+	<span class='label end-time'>Aug 11, 2020 05:42:26 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 3m 14s+392ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:41:52 PM</td>
+				<td class='step-details'>
+						Kotal Url : https://iecouat.kotakcherry.com/ieco/#/home/
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147912650_52' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147912650_52' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147912650_52'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:42:02 PM</td>
+				<td class='step-details'>
+						Click on Home Button
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147922011_2' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147922011_2' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147922011_2'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:42:04 PM</td>
+				<td class='step-details'>
+						Click on Deposite Tab
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147924724_4' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147924724_4' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147924724_4'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:42:04 PM</td>
+				<td class='step-details'>
+						Validate Broken images
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:42:04 PM</td>
+				<td class='step-details'>
+						Total number of images on page : 29
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:42:21 PM</td>
+				<td class='step-details'>
+						Total number of broken images : 0
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147941039_21' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147941039_21' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147941039_21'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:42:25 PM</td>
+				<td class='step-details'>
+						Click on fix Deposite Link
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147945561_25' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147945561_25' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147945561_25'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:42:25 PM</td>
+				<td class='step-details'>
+						Click on amount
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:42:26 PM</td>
+				<td class='step-details'>
+						Click on proceed button
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147946144_26' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147946144_26' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147946144_26'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:42:26 PM</td>
+				<td class='step-details'>
+						Validating Error Message for Amount 100
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147946581_26' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147946581_26' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147946581_26'>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Test2</span>
+						<span class='test-time'>Aug 11, 2020 05:42:26 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 11, 2020 05:42:26 PM</span>
+	<span class='label end-time'>Aug 11, 2020 05:43:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 0s+579ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:42:55 PM</td>
+				<td class='step-details'>
+						Kotal Url : https://iecouat.kotakcherry.com/ieco/#/home/
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147975567_55' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147975567_55' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147975567_55'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:43:02 PM</td>
+				<td class='step-details'>
+						Click on Home Button
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147982185_2' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147982185_2' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147982185_2'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:43:04 PM</td>
+				<td class='step-details'>
+						Click on Deposite Tab
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147984971_4' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147984971_4' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147984971_4'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:43:04 PM</td>
+				<td class='step-details'>
+						Validate Broken images
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:43:04 PM</td>
+				<td class='step-details'>
+						Total number of images on page : 29
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:43:07 PM</td>
+				<td class='step-details'>
+						Total number of broken images : 0
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147987471_7' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147987471_7' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147987471_7'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:43:11 PM</td>
+				<td class='step-details'>
+						Click on fix Deposite Link
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147991883_11' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147991883_11' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147991883_11'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:43:11 PM</td>
+				<td class='step-details'>
+						Click on amount
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:43:12 PM</td>
+				<td class='step-details'>
+						Click on proceed button
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147992403_12' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147992403_12' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597147992403_12'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:43:15 PM</td>
+				<td class='step-details'>
+						Click on Deposite duration
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:43:19 PM</td>
+				<td class='step-details'>
+						Insert duration : `010000
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>5:43:27 PM</td>
+				<td class='step-details'>
+						null - element click intercepted: Element <input _ngcontent-serverapp-c233="" matinput="" autocomplete="off" readonly="true" formcontrolname="interestPayPlan" name="interestPayPlan" class="mat-input-element mat-form-field-autofill-control ieco-txt-inp ieco-inp cdk-text-field-autofill-monitored ng-untouched ng-pristine ng-valid" id="mat-input-1" aria-invalid="false" aria-required="false"> is not clickable at point (468, 458). Other element would receive the click: <div _ngcontent-serverapp-c190="" class="ieco-overlay">...</div>
+  (Session info: chrome=84.0.4147.105)
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'IMCBCP255-MSL2', ip: '192.168.1.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: C:\Users\sanjayt\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:52229}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f61502d16014a0fd213866ed534a128d
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148007164_27' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148007164_27' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148007164_27'>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Test3</span>
+						<span class='test-time'>Aug 11, 2020 05:43:29 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 11, 2020 05:43:29 PM</span>
+	<span class='label end-time'>Aug 11, 2020 05:44:40 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 10s+386ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:01 PM</td>
+				<td class='step-details'>
+						Kotal Url : https://iecouat.kotakcherry.com/ieco/#/home/
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148041086_1' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148041086_1' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148041086_1'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:08 PM</td>
+				<td class='step-details'>
+						Click on Home Button
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148048759_8' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148048759_8' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148048759_8'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:12 PM</td>
+				<td class='step-details'>
+						Click on Deposite Tab
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148052479_12' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148052479_12' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148052479_12'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:12 PM</td>
+				<td class='step-details'>
+						Validate Broken images
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:12 PM</td>
+				<td class='step-details'>
+						Total number of images on page : 29
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:16 PM</td>
+				<td class='step-details'>
+						Total number of broken images : 0
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148056516_16' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148056516_16' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148056516_16'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:21 PM</td>
+				<td class='step-details'>
+						Click on fix Deposite Link
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148061046_21' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148061046_21' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148061046_21'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:21 PM</td>
+				<td class='step-details'>
+						Click on amount
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:21 PM</td>
+				<td class='step-details'>
+						Click on proceed button
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148061794_21' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148061794_21' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148061794_21'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:24 PM</td>
+				<td class='step-details'>
+						Click on Deposite duration
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:29 PM</td>
+				<td class='step-details'>
+						Insert duration : `001028
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:38 PM</td>
+				<td class='step-details'>
+						Click on Deposite duration Done Button
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148078668_38' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148078668_38' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148078668_38'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:38 PM</td>
+				<td class='step-details'>
+						Total interest payout : 2,188
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:39 PM</td>
+				<td class='step-details'>
+						Validating Payout Interest Amount
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148079478_39' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148079478_39' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148079478_39'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:44:39 PM</td>
+				<td class='step-details'>
+						Payout Amount Expected : 2700.0
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>5:44:40 PM</td>
+				<td class='step-details'>
+						null - expected [2700.0] but found [2,188]
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148080061_40' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148080061_40' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148080061_40'>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>Test4</span>
+						<span class='test-time'>Aug 11, 2020 05:44:42 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 11, 2020 05:44:42 PM</span>
+	<span class='label end-time'>Aug 11, 2020 05:45:49 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 6s+634ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:14 PM</td>
+				<td class='step-details'>
+						Kotal Url : https://iecouat.kotakcherry.com/ieco/#/home/
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148114479_14' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148114479_14' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148114479_14'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:23 PM</td>
+				<td class='step-details'>
+						Click on Home Button
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148123120_23' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148123120_23' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148123120_23'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:26 PM</td>
+				<td class='step-details'>
+						Click on Deposite Tab
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148126220_26' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148126220_26' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148126220_26'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:26 PM</td>
+				<td class='step-details'>
+						Validate Broken images
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:26 PM</td>
+				<td class='step-details'>
+						Total number of images on page : 29
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:29 PM</td>
+				<td class='step-details'>
+						Total number of broken images : 0
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148129388_29' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148129388_29' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148129388_29'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:34 PM</td>
+				<td class='step-details'>
+						Click on fix Deposite Link
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148134033_34' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148134033_34' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148134033_34'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:34 PM</td>
+				<td class='step-details'>
+						Click on amount
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:34 PM</td>
+				<td class='step-details'>
+						Click on proceed button
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148134846_34' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148134846_34' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148134846_34'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:37 PM</td>
+				<td class='step-details'>
+						Click on Deposite duration
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:42 PM</td>
+				<td class='step-details'>
+						Insert duration : `010000
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:48 PM</td>
+				<td class='step-details'>
+						Click on Deposite duration Done Button
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148148339_48' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148148339_48' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148148339_48'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:48 PM</td>
+				<td class='step-details'>
+						Total interest payout : 1,541
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:48 PM</td>
+				<td class='step-details'>
+						Validating Payout Interest Amount
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148148717_48' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148148717_48' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148148717_48'>
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:45:48 PM</td>
+				<td class='step-details'>
+						Payout Amount Expected : 1790.0
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>5:45:49 PM</td>
+				<td class='step-details'>
+						null - expected [1790.0] but found [1,541]
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148149043_49' src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148149043_49' data-src='C:\Users\sanjayt\Documents\workspace-spring-tool-suite-4-4.6.0.RELEASE\BankAssignment\src\test\resources\Screenshots\KotakTest_11_1597148149043_49'>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>4</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Aug 11, 2020 05:39:11 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Aug 11, 2020 05:39:11 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 0s+0ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+				passParent: 1,
+				failParent: 3,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 3,
+				
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "Test1":194.392,"Test2":60.579,"Test3":70.386,"Test4":66.634
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/master/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+		</script>
+	</body>
+</html>

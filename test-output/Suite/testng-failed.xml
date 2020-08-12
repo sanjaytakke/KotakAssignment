@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.kt.utilities.Listners"/>
+  </listeners>
+  <test thread-count="5" name="BankFDInterest(failed)">
+    <classes>
+      <class name="com.kt.tests.BankTest">
+        <methods>
+          <include name="test1" invocation-numbers="0 1 2 3"/>
+        </methods>
+      </class> <!-- com.kt.tests.BankTest -->
+    </classes>
+  </test> <!-- BankFDInterest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
